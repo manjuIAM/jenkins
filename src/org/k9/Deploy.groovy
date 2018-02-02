@@ -1,4 +1,6 @@
 package org.k9
+import com.cloudbees.groovy.cps.NonCPS
+import jenkins.model.Jenkins
 
 class Deploy{
     def config
@@ -11,7 +13,7 @@ class Deploy{
     
     void deployimage(){
     this.script.stage('Deploy Image in Openshift'){
-        this.steps{
+        this.script.steps{
            
                 openshift.withCluster(){
                 openshift.newBuild("--name=this.config.imagename", "--image-stream=this.config.dockerurl", "--binary")
