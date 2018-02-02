@@ -1,4 +1,4 @@
-package org.k9.deploy
+package org.k9
 
 class Deploy{
     def config
