@@ -13,7 +13,7 @@ class Deploy{
     this.script.stage('Deploy Image in Openshift'){
       openshift.withCluster(this.config.clustername){
         openshift.newBuild("--name=this.config.imagename", "--image-stream=this.config.dockerurl", "--binary")
-        openshift.newApp("this.config.imagename:latest" "--name=this.config.appname").narrow('svc').expose()
+        openshift.newApp("this.config.imagename:latest", "--name=this.config.appname").narrow('svc').expose()
         }
         
      }
