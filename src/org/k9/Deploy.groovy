@@ -5,7 +5,7 @@ class Deploy{
     def script
     
     Deploy(script, config){
-    this.cofig =config
+    this.config =config
     this.script=script
     }
     
